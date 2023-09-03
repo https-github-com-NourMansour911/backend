@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Message extends Model
+class Coach_client extends Model
 {
+    protected $table = 'coach_clients';
     use HasFactory;
+    
 }

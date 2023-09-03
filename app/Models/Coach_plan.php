@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Coach_plan extends Model
 {
+    protected $table = 'coaches_plans';
     use HasFactory;
 }
