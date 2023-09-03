@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('coach_reviews', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('coach_id');
+            $table->unsignedBigInteger('user_id');
+            $table->text('content')->nullable();
+            $table->decimal('rating');
             $table->timestamps();
+            $table->foreign('coach_id')->references('id')->on('coaches')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
+            $table->text('content');
             $table->timestamps();
+            $table->unsignedBigInteger('sender_id');
+            $table->string('sender_type'); // COACH OR USER MODEL
+            $table->unsignedBigInteger('receiver_id');
+            $table->string('receiver_type'); // COACH OR USER MODEL
         });
     }
 

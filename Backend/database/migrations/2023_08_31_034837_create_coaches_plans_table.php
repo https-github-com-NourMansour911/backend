@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('coaches_plans', function (Blueprint $table) {
-            $table->id();
+            $table->id('id');
+            $table->unsignedBigInteger('coach_id');
+            $table->string('plan_name');
+            $table->text('description');
+            $table->integer('discount')->nullable();
+            $table->bigInteger('price');
             $table->timestamps();
+            $table->foreign('coach_id')->references('id')->on('coaches')->onDelete('cascade');
         });
     }
 

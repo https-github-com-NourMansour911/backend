@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('coach_certifications', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('coach_id');
+            $table->string('name');
+            $table->string('img');
+            $table->string('link')->nullable();
+            $table->text('description')->nullable();
+            $table->foreign('coach_id')->references('id')->on('coaches')->onDelete('cascade');
+
         });
     }
 
