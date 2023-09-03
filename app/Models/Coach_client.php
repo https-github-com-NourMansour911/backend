@@ -9,5 +9,11 @@ class Coach_client extends Model
 {
     protected $table = 'coach_clients';
     use HasFactory;
+    protected $fillable = [
+        'coach_id',
+        'client_id',
+        'plan_id',
+        'end_date',
+    ];
     
 }

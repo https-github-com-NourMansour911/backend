@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Coach_plan extends Model
+class Coach_certifications extends Model
 {
-    protected $table = 'coaches_plans';
+    protected $table = 'coach_certifications';
     use HasFactory;
     protected $fillable = [
         'coach_id',
+        'name',
         'description',
-        'discount',
-        'price',
-        'plan_name',
-
+        'img',
+        'link',
     ];
 }
