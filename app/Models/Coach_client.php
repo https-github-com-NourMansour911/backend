@@ -15,5 +15,9 @@ class Coach_client extends Model
         'plan_id',
         'end_date',
     ];
+    public function coach()
+    {
+        return $this->belongsTo(Coach::class);
+    }
     
 }

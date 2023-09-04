@@ -17,4 +17,8 @@ class Coach_plan extends Model
         'plan_name',
 
     ];
+    public function users()
+    {
+        return $this->belongsTo(Coach::class);
+    }
 }

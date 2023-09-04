@@ -31,6 +31,18 @@ class User extends Authenticatable
         'username',
         'phone',
     ];
+    public function getRouteKeyName(){
+        return 'username';
+    }
+    public function sentMessages()
+    {
+        return $this->morphMany(Message::class, 'sender');
+    }
+
+    public function receivedMessages()
+    {
+        return $this->morphMany(Message::class, 'receiver');
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -41,7 +53,7 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-
+    
     /**
      * The attributes that should be cast.
      *

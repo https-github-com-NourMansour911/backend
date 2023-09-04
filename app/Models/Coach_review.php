@@ -15,4 +15,13 @@ class Coach_review extends Model
         'content',
         'rating',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function coach()
+    {
+        return $this->belongsTo(Coach::class);
+    }
+
 }

@@ -16,4 +16,8 @@ class Coach_certifications extends Model
         'img',
         'link',
     ];
+    public function coach()
+    {
+        return $this->belongsTo(Coach::class);
+    }
 }

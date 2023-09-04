@@ -17,4 +17,14 @@ class Message extends Model
         'content',
         'date',
     ];
+    public function sender()
+    {
+        return $this->morphTo();
+    }
+
+    public function receiver()
+    {
+        return $this->morphTo();
+    }
+    
 }

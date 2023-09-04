@@ -14,6 +14,15 @@ class Coach extends Model
         return 'username';
     }
 
+    public function sentMessages()
+    {
+        return $this->morphMany(Message::class, 'sender');
+    }
+
+    public function receivedMessages()
+    {
+        return $this->morphMany(Message::class, 'receiver');
+    }
     protected $fillable = [
         'first_name',
         'last_name',
@@ -30,6 +39,19 @@ class Coach extends Model
         'status',
 
     ];
+    public function certifications()
+    {
+        return $this->hasMany(Certification::class);
+    }
+    public function plans()
+    {
+        return $this->hasMany(Plan::class);
+    }
+    public function clients()
+    {
+        return $this->hasMany(Client::class);
+    }
+    
     /**
      * The attributes that should be hidden for serialization.
      *
