@@ -9,16 +9,26 @@ class Coach extends Model
 {
     protected $table = 'coaches';
     use HasFactory;
+    public function getRouteKeyName()
+    {
+        return 'username';
+    }
+
     protected $fillable = [
         'first_name',
         'last_name',
         'email',
         'password',
         'country',
-        'government',
-        'description',
+        'governorate',
+        'bio',
         'img',
-        'link',
+        'username',
+        'phone',
+        'expertise',
+        'completed_clients',
+        'status',
+
     ];
     /**
      * The attributes that should be hidden for serialization.
