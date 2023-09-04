@@ -9,7 +9,7 @@ an online coaching platform that combines technology and expert guidance for tra
 - Ngrok and this will set up our local server to be accessible publicly.
 
 
-### Libraries we could use latter
+### Libraries we could use later
 
 - **Laravel/UI**
 - **[Pusher]([https://tighten.co](https://pusher.com/tutorials/chat-laravel/))** 
