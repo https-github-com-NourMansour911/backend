@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('coaches', function (Blueprint $table) {
             $table->id('id');
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
             $table->string('country')->nullable();
@@ -22,9 +21,9 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('img')->nullable();
             $table->string('username')->unique();
-            $table->unsignedInteger('expertise');
+            $table->unsignedInteger('expertise')->default(0);
             $table->unsignedBigInteger('completed_clients')->default(0);
-            $table->text('bio');
+            $table->text('bio')->nullable();
             $table->enum('status', ['active', 'inactive']); // IF INACTIVE, COACH CANNOT have clients
             $table->timestamps();
         });
