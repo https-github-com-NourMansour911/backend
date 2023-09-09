@@ -11,7 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('coach_clients', function (Blueprint $table) {
+        Schema::create('sessions', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->unsignedBigInteger('coach_id');
+            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('plan_id');
+            $table->dateTime('end_date');
             // Add foreign key constraint for coach_id
             $table->foreign('coach_id')
                 ->references('id')
@@ -43,5 +49,6 @@ return new class extends Migration
             $table->dropForeign(['client_id']);
             $table->dropForeign(['plan_id']);
         });
+        Schema::dropIfExists('sessions');
     }
 };

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CoachController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PlanController;
-use App\Http\Controllers\CoachClientController;
+use App\Http\Controllers\BookedSessionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,9 +50,9 @@ Route::get('/plans/{plan}/edit', [PlanController::class, 'edit']);
 Route::put('/plans/{plan}', [PlanController::class, 'update']);
 Route::delete('/plans/{plan}', [PlanController::class, 'destroy']);
 
-//------------------CoachClient Routes------------------
-Route::get('/coach_clients/create', [CoachClientController::class, 'create']);
-Route::post('/coach_clients', [CoachClientController::class, 'store']);
-Route::get('/coach_clients/{coach_client}/edit', [CoachClientController::class, 'edit']);
-Route::put('/coach_clients/{coach_client}', [CoachClientController::class, 'update']);
-Route::delete('/coach_clients/{coach_client}', [CoachClientController::class, 'destroy']);
+//------------------BookedSession Routes------------------
+Route::get('/bookedsessions/create', [BookedSessionController::class, 'create']);
+Route::post('/bookedsessions', [BookedSessionController::class, 'store']);
+Route::get('/bookedsessions/{bookedsession}/edit', [BookedSessionController::class, 'edit']);
+Route::put('/bookedsessions/{bookedsession}', [BookedSessionController::class, 'update']);
+Route::delete('/bookedsessions/{bookedsession}', [BookedSessionController::class, 'destroy']);

@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Coach_client extends Model
+class BookedSession extends Model
 {
-    protected $table = 'coach_clients';
     use HasFactory;
     protected $fillable = [
         'coach_id',
@@ -19,5 +18,4 @@ class Coach_client extends Model
     {
         return $this->belongsTo(Coach::class);
     }
-    
 }
