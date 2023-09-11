@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->unsignedInteger('expertise')->default(0);
             $table->unsignedBigInteger('completed_clients')->default(0);
-            $table->text('bio')->nullable();
-            $table->enum('status', ['active', 'inactive']); // IF INACTIVE, COACH CANNOT have clients
+            $table->unsignedBigInteger('Active_clients')->default(0);
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
     }

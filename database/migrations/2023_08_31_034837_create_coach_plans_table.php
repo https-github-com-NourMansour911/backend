@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id');
             $table->unsignedBigInteger('coach_id');
             $table->string('plan_name');
-            $table->text('description');
+            $table->integer('duration'); // in months
             $table->integer('discount')->nullable();
             $table->bigInteger('price');
             $table->timestamps();
