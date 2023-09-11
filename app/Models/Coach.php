@@ -24,32 +24,35 @@ class Coach extends Model
         return $this->morphMany(Message::class, 'receiver');
     }
     protected $fillable = [
-        'first_name',
-        'last_name',
+        'name',
         'email',
         'password',
         'country',
         'governorate',
-        'bio',
         'img',
         'username',
         'phone',
         'expertise',
         'completed_clients',
+        'Active_clients',
         'status',
 
     ];
-    public function certifications()
+    public function reviews()
     {
-        return $this->hasMany(Certification::class);
+        return $this->hasMany(Review::class);
     }
-    public function plans()
+    public function bookedSessions()
     {
-        return $this->hasMany(Plan::class);
+        return $this->hasMany(BookedSession::class);
     }
-    public function clients()
+    public function coachPlans()
     {
-        return $this->hasMany(Client::class);
+        return $this->hasMany(CoachPlan::class);
+    }
+    public function transformation()
+    {
+        return $this->hasMany(Transformation::class);
     }
     
     /**

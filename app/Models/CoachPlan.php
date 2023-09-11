@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Coach_plan extends Model
+class CoachPlan extends Model
 {
-    protected $table = 'coaches_plans';
     use HasFactory;
+    protected $table = 'coach_plans';
     protected $fillable = [
         'coach_id',
-        'description',
+        'duration',
         'discount',
         'price',
         'plan_name',
 
     ];
-    public function users()
+    public function coach()
     {
         return $this->belongsTo(Coach::class);
     }

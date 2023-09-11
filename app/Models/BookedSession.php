@@ -12,10 +12,15 @@ class BookedSession extends Model
         'coach_id',
         'client_id',
         'plan_id',
-        'end_date',
+        'start_date',
+        'start_time',
     ];
     public function coach()
     {
-        return $this->belongsTo(Coach::class);
+        return $this->belongsTo(User::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

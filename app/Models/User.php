@@ -18,22 +18,18 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
+        'name',
         'email',
         'password',
         'age',
+        'gender',
         'weight',
         'height',
         'country',
         'governorate',
         'img',
-        'username',
         'phone',
     ];
-    public function getRouteKeyName(){
-        return 'username';
-    }
     public function sentMessages()
     {
         return $this->morphMany(Message::class, 'sender');
@@ -43,7 +39,14 @@ class User extends Authenticatable
     {
         return $this->morphMany(Message::class, 'receiver');
     }
-
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+    public function bookedSessions()
+    {
+        return $this->hasMany(BookedSession::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

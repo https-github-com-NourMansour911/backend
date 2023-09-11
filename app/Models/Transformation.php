@@ -5,16 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Coach_certifications extends Model
+class Transformation extends Model
 {
-    protected $table = 'coach_certifications';
     use HasFactory;
     protected $fillable = [
         'coach_id',
-        'name',
-        'description',
         'img',
-        'link',
+        'client_age',
+        'client_name',
     ];
     public function coach()
     {
