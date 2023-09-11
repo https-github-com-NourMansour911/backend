@@ -17,7 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('coach_id');
             $table->unsignedBigInteger('client_id');
             $table->unsignedBigInteger('plan_id');
-            $table->dateTime('start_date');
+            $table->date('start_date');
+            $table->time('start_time');
             // Add foreign key constraint for coach_id
             $table->foreign('coach_id')
                 ->references('id')

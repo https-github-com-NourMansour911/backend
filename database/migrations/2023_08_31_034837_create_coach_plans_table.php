@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('coach_id');
             $table->string('plan_name');
             $table->integer('duration'); // in months
-            $table->integer('discount')->nullable();
+            $table->integer('discount')->default(0);
             $table->bigInteger('price');
             $table->timestamps();
             $table->foreign('coach_id')->references('id')->on('coaches')->onDelete('cascade');

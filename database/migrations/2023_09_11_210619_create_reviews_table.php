@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('coach_reviews', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('coach_id');
             $table->text('content')->nullable();
-            $table->decimal('rating',1,1);
+            $table->decimal('rating', 2, 1);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('coach_id')->references('id')->on('coach')->onDelete('cascade');
+            $table->foreign('coach_id')->references('id')->on('coaches')->onDelete('cascade');
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('coach_reviews');
+        Schema::dropIfExists('reviews');
     }
 };
