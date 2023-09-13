@@ -52,11 +52,15 @@ class AuthController extends Controller
    public function login(Request $request)
     {
         // Validate the login request
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            // Authentication passed
-            $user = Auth::user();
+        $email=$request['email'];
+        $password=$request['password'];
+        $user = User::where('email', $email)->first();
+        if (!$user) {
+            return response()->json([
+                'message' => 'Invalid credentials',
+            ], 401);
+        }
+        if (password_verify($password, $user->password)) {
             $token = $user->createToken('API Token')->plainTextToken;
             $response = [
                 'user' => $user,
@@ -64,7 +68,6 @@ class AuthController extends Controller
             ];
             return response()->json($response, 200);
         }
-        // Authentication failed
         return response()->json([
             'message' => 'Invalid credentials',
         ], 401);
