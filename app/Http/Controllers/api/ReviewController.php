@@ -23,16 +23,15 @@ class ReviewController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request , Coach $coach)
     {
         try{
         $fields = $request->validate([
-            'coach_id' => 'required|exists:coaches,id',
             'content' => 'string',
             'rating' => 'required|numeric|min:1|max:5'
         ]);
         Review::create([
-            'coach_id' => $request->coach_id,
+            'coach_id' => $request->$coach->id,
             'user_id' => $request->user()->id,
             'content' => $request->content,
             'rating' => $request->rating
@@ -55,6 +54,12 @@ class ReviewController extends Controller
     public function update(Request $request, string $id)
     {
         $review = Review::find($id);
+        if($review->user_id != $request->user()->id){
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+        if($review->coach_id != $request->coach_id){
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
         $review->update($request->all());
         return "Review updated successfully";
         
@@ -63,9 +68,12 @@ class ReviewController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request,string $id)
     {
         $review = Review::find($id);
+        if ($review->user_id != $request->user()->id) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
         $review->delete();
         return "Review deleted successfully";
     }
