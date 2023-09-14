@@ -33,10 +33,8 @@ class AuthController extends Controller
 
             $token = $user->createToken('myapptoken')->plainTextToken;
 
-            $response = [
-                'user' => $user,
-                'token' => $token,
-            ];
+            $user['token'] = $token;
+            $response =  $user;
 
             return response()->json($response, 201);
         } catch (ValidationException $e) {
@@ -62,10 +60,8 @@ class AuthController extends Controller
         }
         if (password_verify($password, $user->password)) {
             $token = $user->createToken('API Token')->plainTextToken;
-            $response = [
-                'user' => $user,
-                'token' => $token
-            ];
+            $user['token'] = $token;
+            $response =$user;
             return response()->json($response, 200);
         }
         return response()->json([
