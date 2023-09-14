@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 
 class PlanController extends Controller
@@ -12,7 +13,7 @@ class PlanController extends Controller
     }
     public function create()
     {
-
+        return view('coaches.plans.create', ['user' => Auth::user()]);
     }
     public function store()
     {
