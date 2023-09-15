@@ -18,7 +18,7 @@
                     
                     <div class="mb-3">
                         <label for="duration" class="form-label">Duration </label>
-                        <input type="text" name="duration" class="form-control" id="duration" requierd>
+                        <input type="number" name="duration" class="form-control" id="duration" requierd>
                     @error('duration')
                             <strong>{{ $message }}</strong>
                     @enderror

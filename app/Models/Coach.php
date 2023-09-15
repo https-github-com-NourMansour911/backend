@@ -55,7 +55,10 @@ class Coach extends Authenticatable
     {
         return $this->hasMany(Transformation::class);
     }
-    
+    public function certification()
+    {
+        return $this->hasMany(Transformation::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

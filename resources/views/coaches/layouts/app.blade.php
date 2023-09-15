@@ -29,7 +29,7 @@
 
     <!-- Template Stylesheet -->
     <link href=" {{ asset('css/style.css') }} " rel="stylesheet">
-    @vite([])
+    @vite(['./resources/js/app.js'])
 </head>
 
 <body>
@@ -47,7 +47,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-<!--#################### --><h3 class="text-primary"><i src="{{ asset('favicon.ico') }}" ></i>E-GEM</h3> 
+                    <h3 class="text-primary">E-GEM</h3> 
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -62,19 +62,14 @@
                 <div class="navbar-nav w-100">
                     <a href="{{url('/dashboard')}}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Plans</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>My Info</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="#" class="dropdown-item">hagnch</a>
-                            <a href="element.html" class="dropdown-item">Other Elements</a>
+                            <a href="{{ url('/profile') }}" class="dropdown-item">Edit Profile</a>
+                            <a href="{{ url('/certifications') }}" class="dropdown-item">Certifications</a>
                         </div>
                     </div>
                     <a href="{{ url('/plans') }}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>My Plans</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
-                    </div>
+                    <a href="{{ url('/transformations') }}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Transformations</a>
                 </div>
             </nav>
         </div>
@@ -210,7 +205,7 @@
     <script src="{{asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 
     <!-- Template Javascript -->
-    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset("js/main.js") }}"></script>
 </body>
 
 </html>

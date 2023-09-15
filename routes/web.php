@@ -6,6 +6,8 @@ use App\Http\Controllers\CoachController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\BookedSessionController;
+use App\Http\Controllers\TransformationController;
+use App\Http\Controllers\CertificationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,12 +23,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('contact-us', function () {
-    return view('contactus');
+    return view('contact');
 });
-// //----------Coach Routes------------
-// Route::get('/coaches/{coach}', [CoachController::class, 'show']);
-// Route::get('/coaches/{coach}/plans', [CoachController::class, 'plans']);
-// Route::get('/coaches/{coach}/reviews', [CoachController::class, 'reviews']);
 
 // //------------User Routes------------
 // Route::get('/{user}', [UserController::class, 'show']);
@@ -36,11 +34,22 @@ Route::get('contact-us', function () {
 // Route::delete('/{user}', [UserController::class, 'destroy']);
 // Route::get('/{user}/reviews', [UserController::class, 'reviews']);
 
-// //------------------Plan Routes------------------
+//------------------Plan Routes------------------
 Route::get('/plans', [PlanController::class, 'index']);
 Route::post('/plans', [PlanController::class, 'store']);
 Route::put('/plans', [PlanController::class, 'update']);
 Route::delete('/plans', [PlanController::class, 'destroy']);
+
+//------------------Transformation Routes------------------
+Route::get('/transformations', [TransformationController::class, 'index']);
+Route::post('/transformations', [TransformationController::class, 'store']);
+Route::delete('/transformations', [TransformationController::class, 'destroy']);
+
+//------------------Certification Routes------------------
+Route::get('/certifications', [CertificationController::class, 'index']);
+Route::post('/certifications', [CertificationController::class, 'store']);
+Route::delete('/certifications', [CertificationController::class, 'destroy']);
+
 
 // //------------------BookedSession Routes------------------
 // Route::get('/bookedsessions/create', [BookedSessionController::class, 'create']);
@@ -61,4 +70,5 @@ Route::get('/profile', function () {
 
 Route::put('/profile', [CoachController::class, 'update']);
 Route::delete('/delete-account', [CoachController::class, 'destroy']);
+
 

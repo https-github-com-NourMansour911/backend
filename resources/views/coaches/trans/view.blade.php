@@ -25,9 +25,8 @@
                     </div>
                     <div class="mb-3 ">
                         <label for="formFileSm" class="form-label">Transformation after and before</label>
-                        <input class="form-control form-control-sm bg-dark" id="formFileSm" name="img" type="file" accept=".jpeg,.png,.jpg,.gif,.svg">
+                        <input class="form-control form-control-sm bg-dark" id="formFileSm" name="img" type="file" accept=".jpeg,.png,.jpg,.gif,.svg" requierd>
                         @error('img')
-                            <span class="alert alert-danger mt-3" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror

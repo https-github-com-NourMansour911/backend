@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Review::factory(5)->create();
         \App\Models\BookedSession::factory(5)->create();
         \App\Models\Transformation::factory(5)->create();
+        \App\Models\Certification::factory(5)->create();
         \App\Models\Coach::factory()->create([
             'name' => 'Eman Zaki',
             'email' => 'eman@eman.com',
