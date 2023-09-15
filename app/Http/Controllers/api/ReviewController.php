@@ -31,7 +31,7 @@ class ReviewController extends Controller
             'rating' => 'required|numeric|min:1|max:5'
         ]);
         Review::create([
-            'coach_id' => $request->$coach->id,
+            'coach_id' => $coach->id,
             'user_id' => $request->user()->id,
             'content' => $request->content,
             'rating' => $request->rating

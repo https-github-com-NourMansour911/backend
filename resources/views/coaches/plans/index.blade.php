@@ -1,5 +1,5 @@
 @extends('coaches.layouts.app')
-@section('title', 'Create Plan')
+@section('title', 'Plans')
 @section('content')
 <div class="container-fluid pt-4 px-4">
     <div class="row g-4">
@@ -44,7 +44,6 @@
         </div>
         <div class="col-sm-12 col-xl-12">
             <div class="bg-secondary rounded h-100 p-4">
-                <form method="POST" action="/profile" enctype="multipart/form-data" >
                     <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h6 class="mb-0">Your Current Plans</h6>
@@ -73,21 +72,24 @@
                                         @csrf
                                         @method('DELETE')
                                         <input type="hidden" name="plan_id" value="{{$plan->id}}">
-                                        <button class="btn btn-sm btn-primary" href="">Delete</button></td>
-                                    </form>
+                                        <button class="btn btn-sm btn-primary" href="">Delete</button>
+                                        </form>
+                                    </td>
+                                    
                                     <td><form method="POST" action="/plans">
                                         @csrf
                                         @method('PUT')
                                         <input type="hidden" name="plan_id" value="{{$plan->id}}">
-                                        <button class="btn btn-sm btn-primary" href="">Remove discount</button></td>
-                                    </form>
+                                        <button class="btn btn-sm btn-primary" href="">Remove discount</button>
+                                        </form>
+                                    </td>
+                                    
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
                     </div>
                 </div>
-                </form>
             </div>
         </div>
     </div>
