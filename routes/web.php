@@ -37,11 +37,10 @@ Route::get('contact-us', function () {
 // Route::get('/{user}/reviews', [UserController::class, 'reviews']);
 
 // //------------------Plan Routes------------------
-Route::get('/plans/create', [PlanController::class, 'create']);
+Route::get('/plans', [PlanController::class, 'index']);
 Route::post('/plans', [PlanController::class, 'store']);
-Route::get('/plans/{plan}/edit', [PlanController::class, 'edit']);
-Route::put('/plans/{plan}', [PlanController::class, 'update']);
-Route::delete('/plans/{plan}', [PlanController::class, 'destroy']);
+Route::put('/plans', [PlanController::class, 'update']);
+Route::delete('/plans', [PlanController::class, 'destroy']);
 
 // //------------------BookedSession Routes------------------
 // Route::get('/bookedsessions/create', [BookedSessionController::class, 'create']);

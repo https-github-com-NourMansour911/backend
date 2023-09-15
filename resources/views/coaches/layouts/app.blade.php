@@ -29,7 +29,7 @@
 
     <!-- Template Stylesheet -->
     <link href=" {{ asset('css/style.css') }} " rel="stylesheet">
-    @vite(['./resources/js/app.js'])
+    @vite([])
 </head>
 
 <body>
@@ -47,7 +47,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-<!--#################### --><h3 class="text-primary"><i src="{{ asset('favicon.ico') }}" ></i>eGem</h3> 
+<!--#################### --><h3 class="text-primary"><i src="{{ asset('favicon.ico') }}" ></i>E-GEM</h3> 
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -64,12 +64,11 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Plans</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{ url('/plans/create') }}" class="dropdown-item">View plans</a>
-                            <a href="{{ url('/plans/create') }}" class="dropdown-item">Create new plan</a>
+                            <a href="#" class="dropdown-item">hagnch</a>
                             <a href="element.html" class="dropdown-item">Other Elements</a>
                         </div>
                     </div>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    <a href="{{ url('/plans') }}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>My Plans</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
@@ -185,15 +184,8 @@
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                            <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        </div>
+                    <div class="col-12 col-sm-6 text-center text-sm-start">
+                        &copy; <a href="/home">E-GEM</a>, All Right Reserved. 
                     </div>
                 </div>
             </div>
@@ -218,7 +210,7 @@
     <script src="{{asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 
     <!-- Template Javascript -->
-    <script src="{{asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>
