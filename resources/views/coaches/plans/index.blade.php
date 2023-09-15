@@ -12,9 +12,7 @@
                         <label for="plan_name" class="form-label">Plan Name</label>
                         <input type="text" class="form-control" id="plan_name" name="plan_name">
                         @error('plan_name')
-                            <span class="alert alert-danger mt-3" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                            <strong>{{ $message }}</strong>
                         @enderror
                     </div>
                     
@@ -22,27 +20,21 @@
                         <label for="duration" class="form-label">Duration </label>
                         <input type="text" name="duration" class="form-control" id="duration" requierd>
                     @error('duration')
-                        <span class="alert alert-danger mt-3" role="alert">
                             <strong>{{ $message }}</strong>
-                        </span>
                     @enderror
                     </div>
                     <div class="mb-3">
                        <label for="price" class="form-label">Price </label>
                         <input type="number" class="form-control" id="price" name="price" placeholder="0" >
                         @error('price')
-                           <span class="alert alert-danger mt-3" role="alert">
                                 <strong>{{ $message }}</strong>
-                              </span>
-                           @enderror
+                        @enderror
                       </div>
                     <div class="mb-3">
                         <label for="discount" class="form-label">Discount in % </label>
                         <input type="number" class="form-control" id="discount" name="discount" placeholder="0" min="0" max="100" >
                         @error('discount')
-                            <span class="alert alert-danger mt-3" role="alert">
                                 <strong>{{ $message }}</strong>
-                            </span>
                         @enderror
                     </div>
                     
