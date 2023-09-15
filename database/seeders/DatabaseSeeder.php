@@ -18,9 +18,11 @@ class DatabaseSeeder extends Seeder
         \App\Models\Review::factory(5)->create();
         \App\Models\BookedSession::factory(5)->create();
         \App\Models\Transformation::factory(5)->create();
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\Coach::factory()->create([
+            'name' => 'Eman Zaki',
+            'email' => 'eman@eman.com',
+            'password' => bcrypt('123456789'),
+            'username' => 'eman',
+        ]);
     }
 }

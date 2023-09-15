@@ -17,13 +17,14 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('gender', ['male' , 'female'])->nullable();
-            $table->unsignedBigInteger('age')->nullable();
-            $table->unsignedBigInteger('weight')->nullable();
-            $table->unsignedBigInteger('height')->nullable();
+            $table->string('age')->nullable();
+            $table->string('weight')->nullable();
+            $table->string('height')->nullable();
             $table->string('country')->nullable();
             $table->string('governorate')->nullable();
             $table->string('img')->nullable();
             $table->string('phone')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
