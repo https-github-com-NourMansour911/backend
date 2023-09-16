@@ -22,7 +22,7 @@ class CoachFactory extends Factory
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', //password
             'username' => fake()->unique()->userName(),
             'bio' => fake()->paragraph(),
-            'img' => "techtitans.puiux.org/" . 'Images/Coach/default.png',
+            'img' => "techtitans.puiux.org/" . 'Images/Coaches/default.png',
             'category' => fake()->randomElement(['fitness', 'nutrition', 'yoga', 'meditation', 'therapy']),
             'gender'=>fake()->randomElement(['male','female']),
         ];
