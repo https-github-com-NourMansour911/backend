@@ -31,12 +31,12 @@ class CoachController extends Controller
         if ($request->hasFile('img')) {
             $img = Str::random(20) . '.' . $request->file('img')->getClientOriginalExtension();
             $request->file('img')->move(public_path('Images/Coaches'), $img);
-            $coach->img = 'Images/Coaches/' .$img;
+            $coach->img = 'techtitans.puiux.org/Images/Coaches/' .$img;
         }
         $coach->name=$request->name;
         $coach->email=$request->email;
         $coach->country=$request->country;
-        //$coach->bio=$request->bio;
+        $coach->bio=$request->bio;
         if(isset($request->status))
             $coach->status=$request->status;
         $coach->expertise=$request->expertise;
