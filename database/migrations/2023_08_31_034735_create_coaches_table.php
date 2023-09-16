@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('country')->nullable();
-            $table->string('img')->default('Images/default.png');
+            $table->string('img')->default('https://techtitans.puiux.org/Images/default.png');
             $table->string('category')->nullable();
             $table->enum('gender', ['male', 'female'])->nullable();
             $table->string('username')->unique();
