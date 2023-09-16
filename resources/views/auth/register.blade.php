@@ -105,13 +105,6 @@
       </section>
     </div>
   </section>
-  @if ($errors->any())
-    @foreach ($errors->all() as $error)
-      <div class="alert alert-danger mt-3" role="alert">
-          {{ $error }}
-      </div>
-    @endforeach
-  @endif
   <script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{ url('https://cdn.auth0.com/js/lock/11.34/lock.min.js')}}"></script>
   <script src="{{ asset('assets/js/main.js')}}"></script>
