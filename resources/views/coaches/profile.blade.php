@@ -189,7 +189,7 @@
                         <option value="Zambia">Zambia</option>
                     </select>
                     <div class=" mb-3 form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 150px;">{{ $user->bio }}</textarea>
+                    <textarea class="form-control" placeholder="Leave a comment here" name="bio" id="floatingTextarea" style="height: 150px;">{{ $user->bio }}</textarea>
                     <label for="floatingTextarea">Tell us about your self</label>
                     </div>
                     <div class="mb-3 form-check">
