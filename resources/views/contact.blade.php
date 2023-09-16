@@ -20,11 +20,17 @@
       </label>
       <input type="checkbox" id="menuControl">
       <nav>
-        <a href="index.html#landing">Main</a>
-        <a href="index.html#training">Programs</a>
-        <a href="index.html#top-rated">Coach</a>
+        <a href="/#landing">Main</a>
+        <a href="/#training">Programs</a>
+        <a href="/#top-rated">Coach</a>
         <a href="#" class="active">Contact Us</a>
-        <a href="sign in.html" id="sign">Sign In</a>
+        @if (Route::has('login'))
+          @auth
+            <a href={{ url('/dashboard') }}>Dashboard</a>
+          @else
+                <a href="{{ route('login') }}">Sign in</a>
+          @endauth
+        @endif
       </nav>
       <div class="part3">
         @guest
@@ -103,9 +109,9 @@
     </div>
     <div class="pages">
       <h2>Pages</h2>
-      <a href="index.html#landing">Main</a>
-      <a href="index.html#training">Programs</a>
-      <a href="index.html#top-rated">Coach</a>
+      <a href="/#landing">Main</a>
+      <a href="/#training">Programs</a>
+      <a href="/#top-rated">Coach</a>
     </div>
   </div>
 </footer>
