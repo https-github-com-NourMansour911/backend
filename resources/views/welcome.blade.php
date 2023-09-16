@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   <link rel="icon" type="image/x-icon" href="{{asset('assets/images/icons/logo.png') }}">
-  @vite([])
 </head>
 <body>
   <header id="header">
@@ -25,6 +24,13 @@
         <a href="#training">Programs</a>
         <a href="#top-rated">Coach</a>
         <a href="{{ url('/contact-us') }}">Contact Us</a>
+        @if (Route::has('login'))
+        @auth
+        <a href={{ url('/dashboard') }}>Dashboard</a>
+        @else
+        <a href="{{ route('login') }}">Sign in</a>
+        @endauth
+      @endif
       </nav>
       @if (Route::has('login'))
       <div class="part3">
