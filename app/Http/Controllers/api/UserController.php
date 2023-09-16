@@ -21,6 +21,7 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
+        
         $user = $request->user();
         $user->update($request->all());
         return "User updated successfully";

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookedSession;
 use App\Models\Coach;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -10,24 +12,13 @@ class CoachController extends Controller
 {
     public function index()
     {
-       
+        return view('coaches.profile', ['user' => Auth::user()]);
     }
     public function create()
     {
         view('coaches.create');
     }
-    public function store(Request $request)
-    {
-        
-    }
-    public function show(Coach $coach)
-    {
-        
-    }
-    public function edit(Coach $coach)
-    {
-        
-    }
+
     public function update(Request $request)
     {
         $coach = Coach::find($request->user()->id);
@@ -53,5 +44,12 @@ class CoachController extends Controller
         $coach->save();
         return redirect('/profile');
     }
+
+    public function dashboard(Request $request)
+    {
+    $bookedSessions=$request->user()->bookedSessions()->get();
+    return view('coaches.dashboard', ['user' => Auth::user() ,"bookedSessions" => $bookedSessions]);
+    }
+    
 
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->string('img')->default('Images/default.png');
             $table->string('category')->nullable();
+            $table->enum('gender', ['male', 'female'])->nullable();
             $table->string('username')->unique();
             $table->unsignedInteger('expertise')->default(0);
             $table->unsignedBigInteger('completed_clients')->default(0);

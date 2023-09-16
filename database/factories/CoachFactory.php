@@ -24,6 +24,7 @@ class CoachFactory extends Factory
             'bio' => fake()->paragraph(),
             'img' => "techtitans.puiux.org/" . 'Images/Coach/default.png',
             'category' => fake()->randomElement(['fitness', 'nutrition', 'yoga', 'meditation', 'therapy']),
+            'gender'=>fake()->randomElement(['male','female']),
         ];
     }
 }

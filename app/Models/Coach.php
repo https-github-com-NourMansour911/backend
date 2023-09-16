@@ -30,6 +30,7 @@ class Coach extends Authenticatable
         'password',
         'country',
         'img',
+        'gender',
         'category',
         'username',
         'phone',

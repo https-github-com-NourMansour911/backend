@@ -26,6 +26,7 @@ class CoachResource extends JsonResource
             'completed_clients' => $this->completed_clients,
             'active_clients' => $this->active_clients,
             'status' => $this->status,
+            'gender'=>$this->gender,
             'bio' => $this->bio,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
@@ -33,6 +34,8 @@ class CoachResource extends JsonResource
             'certifications' => $this->certifications,
             'transformations' => $this->transformations,
             'reviews' => $this->reviews,
+            'Plans' => $this->coachPlans,
+
             
         ];
     }

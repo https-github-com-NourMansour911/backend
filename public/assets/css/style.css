@@ -1,0 +1,966 @@
+:root {
+  --mainColor: #BB2525;
+  --secondColor: #fff;
+  --thirdColor: #000000B2;
+  --text-color: #8E8E8E;
+  --textSign-color: #848484;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Open Sans','Segoe UI', Tahoma, Geneva, Verdana, sans-serif,sans-serif;
+}
+a {
+  text-decoration: none;
+}
+button {
+  background-color: var(--mainColor, #BB2525);
+  padding: 12px 18px;
+  border: none;
+  color: var(--secondColor, #fff);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.container2 {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+@media (min-width: 576px) {
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container2 {
+    width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container2 {
+    width: 930px;
+  }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container2 {
+    width: 1140px;
+  }
+}
+/* ####################### start header ####################### */
+#header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: satisfy,sans-serif;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #header {
+    position: static;
+  }
+}
+#header .container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #header .container2 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    flex-wrap: nowrap;
+  }
+}
+#header .container2 label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40px;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #header .container2 label {
+    display: none;
+  }
+}
+#header .container2 nav {
+  width: 100%;
+  z-index: 1000;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #header .container2 nav {
+    width: auto;
+  }
+}
+#header .container2 nav #sign {
+  display: block;
+}
+@media (min-width: 992px) {
+#header .container2 nav #sign {
+  display: none;
+}
+}
+#header .container2 nav a:first-of-type {
+  margin-top: 25px;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #header .container2 nav a:first-of-type {
+    margin-top: 0px;
+  }
+}
+#header .container2 nav a {
+  display: block;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #000;
+  border-bottom: thin dotted var(--secondColor, #fff);
+  background-color: #c02d2d;
+}
+#header .container2 nav a:hover {
+  background-color: var(--mainColor, #BB2525);
+}
+@media (min-width: 992px) {
+  #header .container2 nav a:hover {
+    background-color: #c02d2ddb;
+    color: #fff;
+  }
+}
+#header .container2 nav a:last-of-type {
+  border-color: transparent;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #header .container2 nav a {
+    display: inline-block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    border-bottom: none;
+    background-color: var(--secondColor, #fff);
+  }
+}
+#menuControl {
+  display: none;
+}
+#menuControl+nav ,#header .container2 .part3 {
+  display: none;
+}
+#menuControl:checked+nav {
+  display: block;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #menuControl+nav ,#header .container2 .part3 {
+    display: block;
+  }
+}
+#header .container2 .part3  button {
+  margin-right: 10px;
+}
+#header .container2 .part3 button a {
+  color: var(--secondColor, #fff);
+}
+#header .container2 #nav-lan {
+  font-size: 9px;
+}
+#header .container2 div i {
+  cursor: pointer;
+  padding: 5px;
+}
+/* ####################### end header ####################### */
+/* ####################### start landing ####################### */
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #landing .container2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+}
+#landing .container2 .landing-info {
+  padding-top: 70px;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #landing .container2 .landing-info {
+    padding-top: 0px;
+  }
+}
+#landing .container2 .landing-info h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+#landing .container2 .landing-info p {
+  margin-bottom: 20px;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #landing .container2 .landing-info h1 {
+    font-size: 64px;
+  }
+}
+#landing .container2 .landing-info span {
+  margin-left: 15px;
+  color: var(--mainColor,#BB2525);
+}
+#landing .container2 .landing-photo {
+  display: none;
+  max-width: 550px;
+}
+#landing .container2 .landing-photo img ,
+#follow .container2 .cards article img ,
+#top-rated .container2 .box-card article img ,
+#heroes-stories .container2 .box-card .moving-part img {
+  max-width: 100%;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #landing .container2 .landing-photo {
+    display: block;
+  }
+}
+/* ####################### end landing ####################### */
+/* ####################### start follow ####################### */
+#follow {
+background-color: #000000;
+color: var(--secondColor,#fff);
+}
+#follow .container2 h2 ,
+#training .container2 h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #follow .container2 .cards {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+#follow .container2 .cards article {
+  text-align: center;
+  max-width: 315px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #follow .container2 .cards article > img {
+    margin-bottom: 30px;
+  }
+}
+#follow .container2 .cards article .follow-card-description {
+  background-color: #D9D9D912;
+  box-shadow: 0px 1px 3px 2px #52525212;
+  border-bottom-left-radius: 17px;
+  border-bottom-right-radius: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5px;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #follow .container2 .cards article .follow-card-description {
+    border-radius: 17px;
+  }
+}
+#follow .container2 .cards article .follow-card-description .text {
+  text-align: left;
+  margin-left: 10px;
+}
+#follow .container2 .cards article .follow-card-description h3 ,
+#journey .container2 .box-card .card2 h3 {
+  font-size: 18px;
+}
+#follow .container2 .cards article .follow-card-description p {
+  font-size: 11px;
+  font-weight: 400;
+}
+#follow .container2 .cards article .follow-icon {
+  width: 130px;
+  padding: 13px 14px;
+  border: 1px solid #242424;
+  background-color: #242424;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  border-radius: 11px;
+}
+/* ####################### end follow ####################### */
+
+/* ####################### start training ####################### */
+#training {
+  text-align: center;
+}
+#training .container2 h2 ,
+#training .container2 .training-box-card ,
+#journey .container2 h2 ,
+#journey .container2 .box-card {
+  margin-bottom: 30px;
+}
+#training .container2 .training-box-card {
+  text-align: left;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #training .container2 .training-box-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+  }
+}
+#training .container2 .training-box-card .card2 {
+  margin-bottom: 25px;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #training .container2 .training-box-card .card2 {
+    margin-bottom: 0px;
+  }
+}
+#training .container2 .training-box-card article {
+  background-color: #EFEFEF;
+  margin-top: 10px;
+  padding: 12px 16px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+#training .container2 .training-box-card article h3 {
+  margin-bottom: 30px;
+}
+/* ####################### end training ####################### */
+/* ####################### start journey ####################### */
+#journey {
+  background-color: #000;
+  color: var(--secondColor,#FFF);
+  text-align: center;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #journey .container2 .box-card {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+#journey .container2 .box-card .card2 {
+  text-align: left;
+  border: 2px solid #202020;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  width: 250px;
+  position: relative;
+  padding: 15px 16px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 40px;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #journey .container2 .box-card .card2 {
+    margin-bottom: 30px;
+  }
+}
+#journey .container2 .box-card .card2 .ribbon {
+  background-color: #BB2525;
+  position: relative;
+  top: -20px;
+  left: -15px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  width: fit-content;
+  padding: 3px 12px 3px 20px;
+}
+#journey .container2 .box-card .card2 .ribbon::before {
+  content: "";
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  top: -40%;
+  left: -20px;
+  -webkit-transform: rotate(-142deg);
+  -moz-transform: rotate(-142deg);
+  transform: rotate(-142deg);
+  background-color: #000;
+}
+#journey .container2 .box-card .card2 p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #B2B2B2;
+}
+/* ####################### end journey ####################### */
+/* ####################### start top-rated ####################### */
+#top-rated .container2 h2 ,
+#heroes-stories .container2 h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #top-rated .container2 h2 ,
+  #heroes-stories .container2 h2 {
+    text-align: left;
+  }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #top-rated .container2 .box-card ,
+  #heroes-stories .container2 .box-card {
+    width: 100%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #top-rated .container2 .box-card .moving-part {
+    -webkit-animation: slide-in 2.5s ease-in-out infinite alternate-reverse;
+    animation: slide-in 2.5s ease-in-out infinite alternate-reverse;
+}
+  #top-rated .container2 .box-card .moving-part ,
+  #heroes-stories .container2 .box-card .moving-part {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 20px;
+    cursor: pointer;
+    width: 100%;
+  }
+  #top-rated .container2 .box-card .moving-part:hover ,
+  #heroes-stories .container2 .box-card .moving-part:hover {
+    animation-play-state: paused;
+  }
+}
+@keyframes slide-in {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-350px);
+}
+}
+@keyframes slide-in2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-700px);
+    -webkit-transform: translateX(-700px);
+    -moz-transform: translateX(-700px);
+    -ms-transform: translateX(-700px);
+    -o-transform: translateX(-700px);
+}
+}
+#top-rated .container2 .box-card article ,
+#heroes-stories .container2 .box-card article {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #EFEFEF;
+  margin-bottom: 20px;
+  padding: 5px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+@media (min-width: 992px) {
+  #top-rated .container2 .box-card article ,
+  #heroes-stories .container2 .box-card article {
+    flex-shrink: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+#top-rated .container2 .box-card article img ,
+#heroes-stories  .container2 .box-card article img {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+#top-rated .container2 .box-card article h3 ,
+#heroes-stories .container2 .box-card article h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+#top-rated .container2 .box-card article small {
+  color: #BB2525;
+  font-size: 11px;
+  margin-bottom: 20px;
+  margin-bottom: 8px;
+  display: block;
+}
+#top-rated .container2 .box-card article .article-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #848484;
+  font-size: 11px;
+  font-weight: 600;
+}
+#top-rated .container2 .box-card article .rating {
+  color: #ffa700d6;
+  margin-right: 3px;
+}
+/* ####################### end top-rated ####################### */
+/* ####################### start footer ####################### */
+#heroes-stories {
+  background-color: #F1EEEE;
+}
+@media (min-width: 992px) {
+#heroes-stories .container2 .box-card .moving-part {
+  -webkit-animation: slide-in2 3s ease-in-out infinite alternate-reverse;
+  animation: slide-in2 3s ease-in-out infinite alternate-reverse;
+}
+}
+/* ####################### start footer ####################### */
+/* ####################### start footer ####################### */
+footer {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  border-top: 1px solid var(--mainColor);
+  border-bottom: 1px solid var(--mainColor);
+}
+@media (min-width: 992px) {
+  footer .container2 {
+    display: flex;
+  }
+}
+footer .container2 .contact-footer {
+  text-align: center;
+  padding-right: 25px;
+  padding-left: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  footer .container2 .contact-footer {
+    text-align: right;
+    margin: 0;
+  }
+}
+footer .container2 span ,
+footer .container2 p a {
+  display: block;
+  color: #525C60;
+}
+footer .container2 p a:hover {
+  color: #0d6efd;;
+}
+footer .container2 .about-gem {
+  text-align: center;
+  border-right: 1px solid #D4D4D4;
+  border-left: 1px solid #D4D4D4;
+  padding-right: 25px;
+  padding-left: 25px;
+  margin-bottom: 15px;
+}
+footer .container2 .about-gem .social {
+  color: var(--mainColor);
+}
+footer .container2 .about-gem .social i {
+  border: 10px solid #EFEFEF;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+footer .container2 p {
+  max-width: 543px;
+}
+footer .container2 .pages {
+  padding-right: 25px;
+  padding-left: 25px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 992px) {
+  footer .container2 .pages  {
+    text-align: left;
+    margin: 0;
+  }
+}
+footer .container2 .pages a {
+  display: block;
+  color: #525C60;
+}
+footer .container2 .pages a:hover {
+  color: var(--mainColor,#BB2525);
+}
+.copy .container2 {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.copy .container2 p {
+  margin-bottom: 0!important;
+}
+/* ####################### end footer ####################### */
+/* ####################### start contact page ####################### */
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .header-contact {
+    background: url(../images/contact.png) no-repeat;
+    background-size: contain;
+    width:100%;
+    height:50vh;
+  }
+}
+.contact-us h1 {
+  color: #110906;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: 0em;
+  text-align: center;
+  text-transform: capitalize;
+}
+.contact-us .form {
+  width: Hug (1,131px);
+  height: Hug (571px);
+  top: 745px;
+  left: 394px;
+  gap: 56px;
+  text-align: center;
+  justify-content: space-around;
+  justify-items: center;
+  align-content: center;
+}
+.contact-us form input[type="text"],
+.contact-us form input[type="email"],
+.contact-us form input[type="phone number"],
+.contact-us form textarea[type="text"]{
+  border: none;
+  border-bottom:1px  solid;
+  border-radius: 0%;
+  font-family: Open Sans;
+  font-size: 15px;
+  font-weight: 10;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 15px;
+}
+.contact-us form textarea[type="text"] {
+  resize: none;
+  margin-bottom: 35px;
+}
+.contact-us form label[for="floatingName"] ,
+.contact-us form label[for="floatingPhoneNumber"] ,
+.contact-us form label[for="floatingEmail"] ,
+.contact-us form label[for="floatingTextarea"] ,
+.contact-us form button[type="button"] {
+  text-transform: capitalize;
+}
+.contact-us form button[type="button"] {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: var(--mainColor);
+}
+/* ####################### end contact page ####################### */
+/* ####################### start payment ####################### */
+.payment .container {
+  display: flex;
+  justify-content:space-between;
+}
+.payment .container .card {
+  width: Fixed (585px);
+  height: 607px;
+  left: 48px;
+  padding: 24px;
+  border-radius: 8px ;
+  border: 3px solid var(--mainColor);
+  gap: 16px;
+}
+.payment .container .card-body .card-title{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 33px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--thirdColor);
+  text-transform: capitalize;
+}
+.payment .container .card-body .card-text {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--thirdColor);
+}
+.payment .container .personal {
+  margin: 20px 0px  100px 0px ;
+  height: 800px;
+}
+
+.payment .container .personal .personal-info {
+  width: Hug (1,133px);
+  height: Hug (292px);
+  top: 230px;
+  left: 741px;
+  gap: 48px;
+}
+.payment .container .personal .personal-info h2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.payment .container .personal .payment-methods {
+  width: Hug (900px);
+  height: Hug (460.2px);
+  top: 594px;
+  left: 741px;
+  gap: 40px;
+}
+/* ####################### end payment ####################### */
+/* ####################### start sign in ####################### */
+#sign-in ,
+#sign-up {
+  background-image: none;
+  padding-top: 50px;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #sign-in {
+  background-image: url('../images/sign\ in.png');
+  }
+  #sign-in ,
+  #sign-up {
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    height: 100vh;
+  }
+}
+#sign-in .sign-in-form ,
+#sign-up .sign-up-form {
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #sign-in .sign-in-form ,
+  #sign-up .sign-up-form {
+    width: 450px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+#sign-in .sign-in-form #email-icon ,
+#sign-up .sign-up-form #email-icon {
+  background-color: var(--secondColor);
+  border-right-color: transparent;
+  color: #21252985;
+}
+#sign-in .sign-in-form #lock-icon ,
+#sign-up .sign-up-form #lock-icon {
+  background-color :var(--secondColor);
+}
+#sign-in .sign-in-form #password-input ,
+#sign-up .sign-up-form #password-input ,
+#sign-up .sign-up-form #password-input2 {
+  border-left: none;
+  border-right: none;
+}
+#sign-in .sign-in-form #toggle-password ,
+#sign-up .sign-up-form #toggle-password ,
+#sign-up .sign-up-form #toggle-password2 {
+  background-color:var(--secondColor);
+}
+#sign-in .sign-in-form .remember-forget ,
+#sign-up .sign-up-form .remember-forget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+#sign-in .sign-in-form span ,
+#sign-up .sign-up-form span {
+  white-space: nowrap;
+}
+#sign-in .sign-in-form #checkbox-label ,
+#sign-up .sign-up-form #checkbox-label {
+  margin-left: 5px;
+}
+#sign-in .sign-in-form #sign-btn ,
+#sign-up .sign-up-form #sign-btn {
+  margin-bottom: 15px;
+}
+#sign-in .sign-in-form button ,
+#sign-up .sign-up-form button {
+  width: 100%;
+}
+#sign-in .sign-in-form .or ,
+#sign-up .sign-up-form .or {
+  text-align: center;
+  color: #848484;
+}
+#sign-in .sign-in-form #loginButton ,
+#sign-up .sign-up-form #loginButton {
+  background-color: #EFEFEF;
+  color: var(--mainColor);
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+#sign-in .sign-in-form #loginButton span ,
+#sign-up .sign-up-form #loginButton span {
+  margin-left: 5px;
+}
+#sign-in .sign-in-form #sign-up-text ,
+#sign-up .sign-up-form #sign-in-text {
+  text-align: center;
+}
+#sign-in .sign-in-form .red-text ,
+#sign-up .sign-up-form .red-text {
+  color: var(--mainColor);
+}
+/* ####################### end sign in ####################### */
+/* ####################### start sign in ####################### */
+@media (min-width: 992px) {
+  #sign-up {
+    background-image: url('../images/sign\ up.png');
+  }
+}
+#sign-up #input-gender {
+  color: #75797D;
+}
+#sign-up .sign-up-form .row .input-group input,
+#sign-up .sign-up-form .row .input-group select {
+  border-left: none;
+}
+/* ####################### end sign up ####################### */
+/* ####################### start work-out ####################### */
+.work-out {
+  width: 100%;
+  height: 100%;
+}
+.work-out .header-work-out {
+  background: url(../images/work\ out.png) no-repeat;
+  background-size:contain;
+  width: 100%;
+  height: 535px;
+}
+.work-out .workOut-content {
+  display:flex;
+  justify-content: center;
+  gap: 50px;
+}
+.work-out .workOut-content .container-work {
+  display:flex;
+  border-radius: 16px;
+  border: 1px solid var(--mainColor);
+  gap: 42px;
+  width: Hug (1,097px);
+  height: Hug (232px);
+  top: 754px;
+  left: 411px;
+  padding: 24px;
+}
+.work-out .workOut-content .container-work span {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--mainColor);
+  display: block;
+}
+.work-out .workOut-content .container-work h1 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 0em;
+  text-align: center;
+  padding: 10px;
+}
+.work-out .workOut-content .container-work .Experience {
+  border-left: 1px solid var(--mainColor);
+  Padding :12px, 24px, 12px, 24px;
+}
+.work-out .workOut-content .container-work .ActiveClients {
+  border-left: 1px solid var(--mainColor);
+  Padding :12px, 24px, 12px, 24px;
+}
+.work-out .workOut-content a {
+  width: 92px;
+  height: 92px;
+  background-color: var(--mainColor);
+  border-radius: 50%;
+}
+.work-out .workOut-content a img {
+  width: 45.5px;
+  height: 38.5px;
+  top: 29px;
+}
+.work-out .DescriptionAboutMe {
+  width: Hug (1,732px);
+  height: Hug (308px);
+  margin-top: 50px;
+}
+.work-out .DescriptionAboutMe h2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.work-out .DescriptionAboutMe p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 29px;
+  font-weight: 400;
+  line-height: 42px;
+  text-align: left;
+  color: var(--textSign-color);
+}
+.work-out .DescriptionAboutMe a span {
+  color: var(--mainColor); 
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 29px;
+  font-weight: 400;
+  line-height: 42px;
+  text-align: left;
+}
+/* ####################### end work-out ####################### */

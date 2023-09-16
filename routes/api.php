@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Coach;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\CoachController;
@@ -25,7 +26,6 @@ use App\Http\Controllers\api\ReviewController;
 //------------------User Routes------------------
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::get('/users', [UserController::class, 'show']);
 
 //private routes
 //------------------User Routes------------------
@@ -55,4 +55,9 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
     
     //------------------Transformation Routes------------------
     Route::get('/coaches/{coach}/transformations', [CoachController::class, 'getTransformation']);
+});
+
+
+Route::get('/users', function () {
+    return User::all();
 });

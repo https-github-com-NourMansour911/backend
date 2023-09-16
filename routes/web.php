@@ -25,15 +25,9 @@ Route::get('/', function () {
 Route::get('contact-us', function () {
     return view('contact');
 });
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// //------------User Routes------------
-// Route::get('/{user}', [UserController::class, 'show']);
-// Route::get('/users', [UserController::class, 'index']);
-// Route::get('/{user}/edit', [UserController::class, 'edit']);
-// Route::put('/{user}', [UserController::class, 'update']);
-// Route::delete('/{user}', [UserController::class, 'destroy']);
-// Route::get('/{user}/reviews', [UserController::class, 'reviews']);
-
+Route::group(['middleware' => ['auth']], function(){
 //------------------Plan Routes------------------
 Route::get('/plans', [PlanController::class, 'index']);
 Route::post('/plans', [PlanController::class, 'store']);
@@ -50,25 +44,9 @@ Route::get('/certifications', [CertificationController::class, 'index']);
 Route::post('/certifications', [CertificationController::class, 'store']);
 Route::delete('/certifications', [CertificationController::class, 'destroy']);
 
-
-// //------------------BookedSession Routes------------------
-// Route::get('/bookedsessions/create', [BookedSessionController::class, 'create']);
-// Route::post('/bookedsessions', [BookedSessionController::class, 'store']);
-// Route::get('/bookedsessions/{bookedsession}/edit', [BookedSessionController::class, 'edit']);
-// Route::put('/bookedsessions/{bookedsession}', [BookedSessionController::class, 'update']);
-// Route::delete('/bookedsessions/{bookedsession}', [BookedSessionController::class, 'destroy']);
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/dashboard', function(){
-    return view('coaches.dashboard', ['user' => Auth::user()]);
-});
-Route::get('/profile', function () {
-    return view('coaches.profile', ['user' => Auth::user()]);
-});
-
+Route::get('/dashboard', [CoachController::class, 'dashboard']);
+Route::get('/profile', [CoachController::class, 'index']);
 Route::put('/profile', [CoachController::class, 'update']);
-Route::delete('/delete-account', [CoachController::class, 'destroy']);
 
-
+});
+Auth::routes();
