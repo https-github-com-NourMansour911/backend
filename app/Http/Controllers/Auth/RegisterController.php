@@ -67,9 +67,9 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return Coach::create([
-            'name' => $data['name'],
+            'name' => 'user' . rand(pow(10, 8 - 1), pow(10, 8) - 1),
             'email' => $data['email'],
-            'username' => $data['username'],
+            'username' => 'user' . rand(pow(10, 8 - 1), pow(10, 8) -1),
             'password' => Hash::make($data['password']),
             'gender' =>strtolower($data['gender']),
         ]);

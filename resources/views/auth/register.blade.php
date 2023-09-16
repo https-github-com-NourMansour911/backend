@@ -60,7 +60,7 @@
               <span class="input-group-text" id="lock-icon">
                 <img src="{{ asset('assets/images/icons/user.png')}}" alt="user img" loading="lazy">
               </span>
-              <select id="input-gender" class="form-select" placeholder="Gender" aria-label="Gender">
+              <select id="input-gender" name="gender" class="form-select" placeholder="Gender" aria-label="Gender">
                 <option selected disabled>Gender</option>
                 <option>Female</option>
                 <option>Male</option>
@@ -105,6 +105,13 @@
       </section>
     </div>
   </section>
+  @if ($errors->any())
+    @foreach ($errors->all() as $error)
+      <div class="alert alert-danger mt-3" role="alert">
+          {{ $error }}
+      </div>
+    @endforeach
+  @endif
   <script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{ url('https://cdn.auth0.com/js/lock/11.34/lock.min.js')}}"></script>
   <script src="{{ asset('assets/js/main.js')}}"></script>

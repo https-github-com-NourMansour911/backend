@@ -29,7 +29,6 @@
 
     <!-- Template Stylesheet -->
     <link href=" {{ asset('css/style.css') }} " rel="stylesheet">
-    @vite(['./resources/js/app.js'])
 </head>
 
 <body>
@@ -61,13 +60,8 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="{{url('/dashboard')}}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>My Info</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{ url('/profile') }}" class="dropdown-item">Edit Profile</a>
-                            <a href="{{ url('/certifications') }}" class="dropdown-item">Certifications</a>
-                        </div>
-                    </div>
+                    <a href="{{ url('/profile') }}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Edit Profile</a>
+                    <a href="{{ url('/certifications') }}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Certifications</a>
                     <a href="{{ url('/plans') }}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>My Plans</a>
                     <a href="{{ url('/transformations') }}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Transformations</a>
                 </div>
@@ -78,7 +72,7 @@
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-2">
                 <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
@@ -86,65 +80,24 @@
                     <i class="fa fa-bars"></i>
                 </a>
                 <div class="navbar-nav align-items-center ms-auto">
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Message</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">See all message</a>
-                        </div>
-                    </div>
                     
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <div class="nav-item mx-2">
+                        <a href="#" class="nav-item">
                             <img class="rounded-circle me-lg-2" src="{{ asset($user->img) }}" alt="" style="width: 40px; height: 40px;">
                             <span class="d-none d-lg-inline-flex"> {{ $user->name }} </span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="{{ url('/profile') }}" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                        
+                    </div>
+                    <div class="nav-item mx-4 bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a class="" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
                         </div>
-                    </div>
                 </div>
             </nav>
             <!-- Navbar End -->
@@ -165,11 +118,9 @@
         </div>
         <!-- Content End -->
 
-
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-
     <!-- JavaScript Libraries -->
     <script src="{{ url('https://code.jquery.com/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js') }}"></script>
@@ -180,9 +131,7 @@
     <script src="{{asset('lib/tempusdominus/js/moment.min.js') }}"></script>
     <script src="{{asset('lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
     <script src="{{asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-
     <!-- Template Javascript -->
-    <script src="{{ asset("js/main.js") }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
-
 </html>
