@@ -50,7 +50,7 @@
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="{{ asset($user->img) }}" alt="" style="width: 40px; height: 40px;">
+                        <img class="rounded-circle" src="{{ url('$user->img') }}" alt="" style="width: 40px; height: 40px;">
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
@@ -83,7 +83,7 @@
                     
                     <div class="nav-item mx-2">
                         <a href="#" class="nav-item">
-                            <img class="rounded-circle me-lg-2" src="{{ asset($user->img) }}" alt="" style="width: 40px; height: 40px;">
+                            <img class="rounded-circle me-lg-2" src="{{ url('$user->img') }}" alt="" style="width: 40px; height: 40px;">
                             <span class="d-none d-lg-inline-flex"> {{ $user->name }} </span>
                         </a>
                         
