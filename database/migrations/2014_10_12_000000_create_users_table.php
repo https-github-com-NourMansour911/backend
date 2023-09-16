@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('weight')->nullable();
             $table->string('height')->nullable();
             $table->string('country')->nullable();
-            $table->string('governorate')->nullable();
             $table->string('img')->nullable();
             $table->string('phone')->nullable();
             $table->rememberToken();

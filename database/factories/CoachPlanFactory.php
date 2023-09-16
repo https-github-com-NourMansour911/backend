@@ -20,7 +20,7 @@ class CoachPlanFactory extends Factory
             'plan_name' => fake()->name(),
             'price' => fake()->numberBetween(10, 100),
             'duration' => fake()->numberBetween(1, 12),
-            'coach_id' => fake()->numberBetween(1, 5),
+            'coach_id' => fake()->numberBetween(1, 10),
         ];
     }
 }

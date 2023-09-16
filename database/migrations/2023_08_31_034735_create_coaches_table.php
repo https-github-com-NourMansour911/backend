@@ -17,13 +17,12 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('country')->nullable();
-            $table->string('governorate')->nullable();
-            $table->string('phone')->nullable();
             $table->string('img')->default('Images/default.png');
+            $table->string('category')->nullable();
             $table->string('username')->unique();
             $table->unsignedInteger('expertise')->default(0);
             $table->unsignedBigInteger('completed_clients')->default(0);
-            $table->unsignedBigInteger('Active_clients')->default(0);
+            $table->unsignedBigInteger('active_clients')->default(0);
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->longText('bio')->nullable();
             $table->rememberToken();

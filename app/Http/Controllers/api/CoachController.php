@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\api\CoachResource;
 use App\Models\Transformation;
 use Illuminate\Http\Request;
 use App\Models\Coach;
@@ -13,7 +14,7 @@ class CoachController extends Controller
      */
     public function index()
     {   
-        return Coach::all();
+        return  CoachResource::collection(Coach::all());
     }
 
     /**
@@ -21,7 +22,9 @@ class CoachController extends Controller
      */
     public function show(Coach $coach)
     {
-        return $coach;
+        $coachCollection = collect([$coach]);
+        
+        return CoachResource::collection($coachCollection);
     }
     /**
      * Search for a name
@@ -32,11 +35,13 @@ class CoachController extends Controller
     public function search($name)
     {
         // Search for a coach based on their name or their username
-        return Coach::where('name', 'like', '%'.$name.'%')->orWhere('username', 'like', '%'.$name.'%')->get();
+        $coachs=Coach::where('name', 'like', '%'.$name.'%')->orWhere('username', 'like', '%'.$name.'%')->get();
+        return CoachResource::collection($coachs);
     }
     public function getTransformation(Coach $coach)
     {
-        return Transformation::where('coach_id', $coach->id)->get();
+        $trans=Transformation::where('coach_id', $coach->id)->get();
+        return $trans;
     }
 
 }

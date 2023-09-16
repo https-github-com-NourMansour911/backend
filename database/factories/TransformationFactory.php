@@ -17,8 +17,8 @@ class TransformationFactory extends Factory
     public function definition(): array
     {
         return [
-            'coach_id' => fake()->numberBetween(1, 5),
-            'img' => fake()->imageUrl(),
+            'coach_id' => fake()->numberBetween(1, 10),
+            'img' => "techtitans.puiux.org/" . 'Images/Transfor/default.png',
             'client_age' => fake()->numberBetween(10, 100),
             'client_name' => fake()->name(),
         ];

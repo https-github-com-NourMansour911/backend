@@ -29,8 +29,8 @@ class Coach extends Authenticatable
         'email',
         'password',
         'country',
-        'governorate',
         'img',
+        'category',
         'username',
         'phone',
         'expertise',
@@ -51,11 +51,11 @@ class Coach extends Authenticatable
     {
         return $this->hasMany(CoachPlan::class);
     }
-    public function transformation()
+    public function transformations()
     {
         return $this->hasMany(Transformation::class);
     }
-    public function certification()
+    public function certifications()
     {
         return $this->hasMany(Transformation::class);
     }

@@ -18,8 +18,8 @@ class CertificationFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'img' => 'Images/Certification/default.png',
-            'coach_id' => fake()->numberBetween(1, 5),
+            'img' => "techtitans.puiux.org/" . 'Images/Certification/default.png',
+            'coach_id' => fake()->numberBetween(1, 10),
         ];
     }
 }
