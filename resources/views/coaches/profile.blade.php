@@ -10,7 +10,7 @@
                     @method('PUT')
                     @csrf
                     <div class="text-center d-flex rounded justify-content-xl-around">
-                        <img src="{{url(' $user->img') }}" alt="Profile Picture" class="rounded-circle " style="width:250px; height:250px; object-fit: cover;">
+                        <img src="{{ $user->img}}" alt="Profile Picture" class="rounded-circle " style="width:250px; height:250px; object-fit: cover;">
                         <div class="mb-3 mt-5 mx-4">
                             <label for="formFileSm" class="form-label">Change Profile picture</label>
                             <input class="form-control form-control-sm bg-dark" id="formFileSm" name="img" type="file" accept=".jpeg,.png,.jpg,.gif,.svg">
