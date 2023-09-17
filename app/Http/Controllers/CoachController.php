@@ -26,6 +26,7 @@ class CoachController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:coaches,email,' . $coach->id,
             'img' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'username' => 'required|string|max:255|unique:coaches,username,' . $coach->id,
 
         ]);
         if ($request->hasFile('img')) {
@@ -33,13 +34,16 @@ class CoachController extends Controller
             $request->file('img')->move(public_path('../../public_html/Images/Coaches'), $img);
             $coach->img = 'https://techtitans.puiux.org/Images/Coaches/' .$img;
         }
+        if ($request->has('status')) {
+            $coach->status = $request->status;
+        } else {
+            $coach->status = 'active';
+        }
+        $coach->username=$request->username;
         $coach->name=$request->name;
         $coach->email=$request->email;
         $coach->country=$request->country;
         $coach->bio=$request->bio;
-        if(isset($request->status))
-            $coach->status=$request->status;
-        $coach->expertise=$request->expertise;
         
         $coach->save();
         return redirect('/profile');
