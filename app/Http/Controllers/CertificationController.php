@@ -33,8 +33,8 @@ class CertificationController extends Controller
         $certifications->name = $request->name;
         if ($request->hasFile('img')) {
             $img = Str::random(20) . '.' . $request->file('img')->getClientOriginalExtension();
-            $request->file('img')->move(public_path('Images/Certification'), $img);
-            $certifications->img = 'Images/Certification/' . $img;
+            $request->file('img')->move(public_path('../../public_html/Images/Certification'), $img);
+            $certifications->img = 'https://techtitans.puiux.org/Images/Certification/' . $img;
         }
         $certifications->save();
         return redirect('/certifications');

@@ -30,8 +30,8 @@ class CoachController extends Controller
         ]);
         if ($request->hasFile('img')) {
             $img = Str::random(20) . '.' . $request->file('img')->getClientOriginalExtension();
-            $request->file('img')->move(public_path('Images/Coaches'), $img);
-            $coach->img = 'https://techtitans.puiux.org/public_html/Images/Coaches/' .$img;
+            $request->file('img')->move(public_path('../../public_html/Images/Coaches'), $img);
+            $coach->img = 'https://techtitans.puiux.org/Images/Coaches/' .$img;
         }
         $coach->name=$request->name;
         $coach->email=$request->email;

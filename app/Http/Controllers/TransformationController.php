@@ -35,8 +35,8 @@ class TransformationController extends Controller
         $transformation->client_age = $request->client_age;
         if ($request->hasFile('img')) {
             $img = Str::random(20) . '.' . $request->file('img')->getClientOriginalExtension();
-            $request->file('img')->move(public_path('Images/Transfor'), $img);
-            $transformation->img = 'Images/Transfor/' . $img;
+            $request->file('img')->move(public_path('../../public_html/Images/Transfor'), $img);
+            $transformation->img = 'https://techtitans.puiux.org/Images/Transfor/' . $img;
         }
         $transformation->save();
         return redirect('/transformations');
