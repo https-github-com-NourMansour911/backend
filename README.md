@@ -13,9 +13,13 @@ an online coaching platform that combines technology and expert guidance for tra
 ### Packages
 
 - **Laravel/UI**
+  
 ---
+
 👇👇
+
 [Project Link](https://techtitans.puiux.org/) 
+
 ---
 ## License
 
